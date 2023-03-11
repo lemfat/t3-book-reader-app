@@ -1,0 +1,21 @@
+.camera-area {
+    margin: 0 auto;
+    overflow: hidden;
+    width: 340px;
+    height: 120px;
+    top: 40px;
+    position: relative;
+  }
+  .camera-area video, .camera-area canvas {
+    position: relative;
+    top: -100%;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .camera-area .detect-area {
+    position: absolute;
+    left: 30%;
+    z-index: 10;
+    transform: scaleX(2.0);
+  }

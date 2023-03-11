@@ -14,6 +14,7 @@ return (
      color={on ? "red" : "blue" }
      leftIcon={on ? <IconBarcodeOff size="0.9rem" /> : <IconBarcode size="0.9rem" />}
      onClick={onClick}
+     className="w-24 rounded-md"
     >
         {on ? "停止": "起動"}
     </Button>

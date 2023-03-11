@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Input, Button, Container, Flex } from "@mantine/core";
+import { Modal } from "../modal";
 
 const SearchBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -28,9 +29,10 @@ const SearchBar = () => {
             onChange={handleSearchInputChange}
             radius="xl"
           />
-          <Button onClick={handleSearchClick}  size="xs" radius="xl">
+          <Button onClick={handleSearchClick} variant="outline" size="xs" radius="xl">
             Search
           </Button>
+          <Modal />
         </Flex>
       </Container>
     </>

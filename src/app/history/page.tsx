@@ -1,13 +1,11 @@
 import { type NextPage } from "next";
-import { ActionsGrid } from "~/components/card";
+import { BookList } from "~/components/list";
 
 const History: NextPage = () => {
   return (
     <div>
-      <ActionsGrid></ActionsGrid>
-      hoge
+      <BookList />
     </div>
-
   );
 };
 

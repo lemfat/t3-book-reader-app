@@ -9,6 +9,7 @@ import {
   IconHistory,
 } from '@tabler/icons-react';
 import Link from "next/link"
+import {IconBook} from "@tabler/icons-react"
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
@@ -19,7 +20,7 @@ const useStyles = createStyles((theme) => ({
     flex: `0 0 ${rem(60)}`,
     backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row',
     alignItems: 'center',
     borderRight: `${rem(1)} solid ${
       theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.colors.gray[3]
@@ -140,15 +141,8 @@ export function Navbar() {
   ));
 
   return (
-    <MantineNavbar>
-      <MantineNavbar.Section grow className={classes.wrapper}>
-        <div className={classes.aside}>
-          <div className={classes.logo}>
-
-          </div>
-          {mainLinks}
-        </div>
-      </MantineNavbar.Section>
-    </MantineNavbar>
+    <div className='flex w-full fixed bottom-0 justify-around'>
+      {mainLinks}
+    </div>
   );
 }

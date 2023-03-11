@@ -55,22 +55,20 @@ const Home: NextPage = () => {
   }, [])
 
   return (
-      <div className="flex flex-col">
-        <SearchBar />
+      <div className="flex flex-col items-stretch">
         <div>
-            <BarcodeButton on={scanning} onClick={() => setScanning(!scanning)} />
-            <ul className="results">
-                {results.map((result) => (result.title))}
-            </ul>
-
-            <div id="camera-area" ref={scannerRef} className={`camera-area ${!scanning ? "invisible" : ""}`}>
-            <div className="detect-area">
-              {scanning &&
-                <FaBarcode size={120} color={"black"} />
-              }
-              {scanning && <Scanner scannerRef={scannerRef} onDetected={onDetected} />}
-            </div>
+        <div id="camera-area" ref={scannerRef} className={`camera-area ${!scanning ? "invisible" : ""}`}>
+          <div className="detect-area">
+            {scanning &&
+              <FaBarcode size={120} color={"black"} />
+            }
+            {scanning && <Scanner scannerRef={scannerRef} onDetected={onDetected} />}
           </div>
+        </div>
+        </div>
+        <div className="mt-16">
+          <BarcodeButton on={scanning} onClick={() => setScanning(!scanning)} />
+          <SearchBar />
         </div>
       </div>
   );

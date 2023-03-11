@@ -16,11 +16,6 @@ function getMedianOfCodeErrors(decodedCodes: QuaggaJSResultObject_CodeResult["de
     return medianOfErrors;
 }
 
-const defaultConstraints = {
-    width: 340,
-    height: 240,
-};
-
 const defaultLocatorSettings = {
     patchSize: 'medium',
     halfSample: true,
@@ -32,7 +27,6 @@ const Scanner = ({
   onDetected,
   scannerRef,
   facingMode = "environment",
-  constraints = defaultConstraints,
   locator = defaultLocatorSettings,
   numOfWorkers = navigator.hardwareConcurrency || 0,
   decoders = defaultDecoders,
@@ -41,7 +35,6 @@ const Scanner = ({
   onDetected: (result: QuaggaJSResultObject) => Promise<void>,
   scannerRef: RefObject<HTMLDivElement>,
   facingMode?: string,
-  constraints?: typeof defaultConstraints,
   locator?: typeof defaultLocatorSettings,
   numOfWorkers?: number,
   decoders?: typeof defaultDecoders,
@@ -60,7 +53,6 @@ const Scanner = ({
           inputStream: {
             type: 'LiveStream',
             constraints: {
-                ...constraints,
                 ...{ facingMode },
             },
             area: {
@@ -86,7 +78,7 @@ const Scanner = ({
             Quagga.offDetected(errorCheck);
             Quagga.stop()?.catch((err) => console.error(err));
         };
-    }, [onDetected, scannerRef, errorCheck, constraints, facingMode, locator, numOfWorkers, decoders, locate]);
+    }, [onDetected, scannerRef, errorCheck, facingMode, locator, numOfWorkers, decoders, locate]);
     return null;
 }
 

@@ -40,7 +40,6 @@
     "**/*.cjs",
     "**/*.mjs",
     ".next/types/**/*.ts",
-    "C:\\Users\\佐藤佑樹\\Desktop\\my-t3-app\\.next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
